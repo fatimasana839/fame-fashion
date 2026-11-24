@@ -1,0 +1,1119 @@
+{
+	"schemaVersion": "2.0",
+	"id": 67187,
+	"name": "event",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 67188,
+			"name": "IEventBusModuleService",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"children": [
+				{
+					"id": 67189,
+					"name": "emit",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 23,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L23"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67190,
+							"name": "emit",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method emits one or more events. Subscribers listening to the event(s) are executed asynchronously."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\nawait eventModuleService.emit({\n  name: \"user.created\",\n  data: {\n    user_id: \"user_123\"\n  }\n})\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 23,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L23"
+								}
+							],
+							"typeParameters": [
+								{
+									"id": 67191,
+									"name": "T",
+									"variant": "typeParam",
+									"kind": 131072,
+									"flags": {}
+								}
+							],
+							"parameters": [
+								{
+									"id": 67192,
+									"name": "data",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The details of the events to emit."
+											}
+										]
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/types",
+													"packagePath": "src/event-bus/common.ts",
+													"qualifiedName": "Message"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 67191,
+														"name": "T",
+														"package": "@medusajs/types",
+														"refersToTypeParameter": true
+													}
+												],
+												"name": "Message",
+												"package": "@medusajs/types"
+											},
+											{
+												"type": "array",
+												"elementType": {
+													"type": "reference",
+													"target": {
+														"packageName": "@medusajs/types",
+														"packagePath": "src/event-bus/common.ts",
+														"qualifiedName": "Message"
+													},
+													"typeArguments": [
+														{
+															"type": "reference",
+															"target": 67191,
+															"name": "T",
+															"package": "@medusajs/types",
+															"refersToTypeParameter": true
+														}
+													],
+													"name": "Message",
+													"package": "@medusajs/types"
+												}
+											}
+										]
+									}
+								},
+								{
+									"id": 67193,
+									"name": "options",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Additional options for the event."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Record"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "unknown"
+											}
+										],
+										"name": "Record",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 67194,
+					"name": "subscribe",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 41,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L41"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67195,
+							"name": "subscribe",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method adds a subscriber to an event. It's mainly used internally to register subscribers."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The instance of the Event Module"
+											}
+										]
+									},
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\neventModuleService.subscribe(\"user.created\", async (data) => {\n  console.log(\"User created\", data)\n})\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 41,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L41"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67196,
+									"name": "eventName",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The name of the event to subscribe to."
+											}
+										]
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "symbol"
+											}
+										]
+									}
+								},
+								{
+									"id": 67197,
+									"name": "subscriber",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The subscriber function to execute when the event is emitted."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "Subscriber"
+										},
+										"name": "Subscriber",
+										"package": "@medusajs/types"
+									}
+								},
+								{
+									"id": 67198,
+									"name": "context",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The context of the subscriber."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "SubscriberContext"
+										},
+										"name": "SubscriberContext",
+										"package": "@medusajs/types"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "this"
+							}
+						}
+					]
+				},
+				{
+					"id": 67199,
+					"name": "unsubscribe",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 60,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L60"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67200,
+							"name": "unsubscribe",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method removes a subscriber from an event. It's mainly used internally to unregister subscribers."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The instance of the Event Module"
+											}
+										]
+									},
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\neventModuleService.unsubscribe(\"user.created\", async (data) => {\n  console.log(\"User created\", data)\n})\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 60,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L60"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67201,
+									"name": "eventName",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The name of the event to unsubscribe from."
+											}
+										]
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "symbol"
+											}
+										]
+									}
+								},
+								{
+									"id": 67202,
+									"name": "subscriber",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The subscriber function to remove."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "Subscriber"
+										},
+										"name": "Subscriber",
+										"package": "@medusajs/types"
+									}
+								},
+								{
+									"id": 67203,
+									"name": "context",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The context of the subscriber."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "SubscriberContext"
+										},
+										"name": "SubscriberContext",
+										"package": "@medusajs/types"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "this"
+							}
+						}
+					]
+				},
+				{
+					"id": 67204,
+					"name": "releaseGroupedEvents",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 75,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L75"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67205,
+							"name": "releaseGroupedEvents",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method emits all events in the specified group. Grouped events are useful when you have distributed transactions\nwhere you need to explicitly group, release and clear events upon lifecycle events of a transaction."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\nawait eventModuleService.releaseGroupedEvents(\"group_123\")\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 75,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L75"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67206,
+									"name": "eventGroupId",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The ID of the event group."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 67207,
+					"name": "clearGroupedEvents",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 88,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L88"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67208,
+							"name": "clearGroupedEvents",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method removes all events in the specified group. Grouped events are useful when you have distributed transactions\nwhere you need to explicitly group, release and clear events upon lifecycle events of a transaction."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\nawait eventModuleService.clearGroupedEvents(\"group_123\")\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 88,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L88"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67209,
+									"name": "eventGroupId",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The ID of the event group."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 67210,
+									"name": "options",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Additional options for the event."
+											}
+										]
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 67211,
+											"name": "__type",
+											"variant": "declaration",
+											"kind": 65536,
+											"flags": {},
+											"children": [
+												{
+													"id": 67212,
+													"name": "eventNames",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "The names of the events to clear. If not provided, The group will\nbe entirely cleared."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "event-bus-module.ts",
+															"line": 91,
+															"character": 6,
+															"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L91"
+														}
+													],
+													"type": {
+														"type": "array",
+														"elementType": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"children": [
+														67212
+													]
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 67213,
+					"name": "addInterceptor",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 107,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L107"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67214,
+							"name": "addInterceptor",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method adds an interceptor to the event bus. This means that the interceptor will be\ncalled before the event is emitted."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The instance of the Event Module"
+											}
+										]
+									},
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\neventModuleService.addInterceptor((message, context) => {\n  console.log(\"Interceptor\", message, context)\n})\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 107,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L107"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67215,
+									"name": "interceptor",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The interceptor to add."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "InterceptorSubscriber"
+										},
+										"name": "InterceptorSubscriber",
+										"package": "@medusajs/types"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "this"
+							}
+						}
+					]
+				},
+				{
+					"id": 67216,
+					"name": "removeInterceptor",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "event-bus-module.ts",
+							"line": 120,
+							"character": 2,
+							"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L120"
+						}
+					],
+					"signatures": [
+						{
+							"id": 67217,
+							"name": "removeInterceptor",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "This method removes an interceptor from the event bus."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The instance of the Event Module"
+											}
+										]
+									},
+									{
+										"tag": "@example",
+										"content": [
+											{
+												"kind": "code",
+												"text": "```ts\neventModuleService.removeInterceptor((message, context) => {\n  console.log(\"Interceptor\", message, context)\n})\n```"
+											}
+										]
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "event-bus-module.ts",
+									"line": 120,
+									"character": 2,
+									"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L120"
+								}
+							],
+							"parameters": [
+								{
+									"id": 67218,
+									"name": "interceptor",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The interceptor to remove."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "@medusajs/types",
+											"packagePath": "src/event-bus/common.ts",
+											"qualifiedName": "InterceptorSubscriber"
+										},
+										"name": "InterceptorSubscriber",
+										"package": "@medusajs/types"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "this"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						67189,
+						67194,
+						67199,
+						67204,
+						67207,
+						67213,
+						67216
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "event-bus-module.ts",
+					"line": 8,
+					"character": 17,
+					"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/core/types/src/event-bus/event-bus-module.ts#L8"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				67188
+			]
+		}
+	],
+	"packageName": "@medusajs/types",
+	"symbolIdMap": {
+		"67187": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": ""
+		},
+		"67188": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService"
+		},
+		"67189": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.emit"
+		},
+		"67190": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.emit"
+		},
+		"67191": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "T"
+		},
+		"67192": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "data"
+		},
+		"67193": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "options"
+		},
+		"67194": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.subscribe"
+		},
+		"67195": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.subscribe"
+		},
+		"67196": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "eventName"
+		},
+		"67197": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "subscriber"
+		},
+		"67198": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "context"
+		},
+		"67199": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.unsubscribe"
+		},
+		"67200": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.unsubscribe"
+		},
+		"67201": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "eventName"
+		},
+		"67202": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "subscriber"
+		},
+		"67203": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "context"
+		},
+		"67204": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.releaseGroupedEvents"
+		},
+		"67205": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.releaseGroupedEvents"
+		},
+		"67206": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "eventGroupId"
+		},
+		"67207": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.clearGroupedEvents"
+		},
+		"67208": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.clearGroupedEvents"
+		},
+		"67209": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "eventGroupId"
+		},
+		"67210": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "options"
+		},
+		"67211": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "__type"
+		},
+		"67212": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "__type.eventNames"
+		},
+		"67213": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.addInterceptor"
+		},
+		"67214": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.addInterceptor"
+		},
+		"67215": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "interceptor"
+		},
+		"67216": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.removeInterceptor"
+		},
+		"67217": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "IEventBusModuleService.removeInterceptor"
+		},
+		"67218": {
+			"packageName": "@medusajs/types",
+			"packagePath": "src/event-bus/event-bus-module.ts",
+			"qualifiedName": "interceptor"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "../../../../packages/core/types/src/event-bus/event-bus-module.ts"
+		},
+		"reflections": {
+			"1": 67187
+		}
+	}
+}

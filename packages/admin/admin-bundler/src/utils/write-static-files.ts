@@ -1,0 +1,124 @@
+import { mkdir, writeFile } from "node:fs/promises"
+import { dirname, join, relative, sep } from "node:path"
+import outdent from "outdent"
+
+export async function writeStaticFiles(plugins?: string[], sources?: string[]) {
+  const outDir = join(process.cwd(), ".medusa/client")
+
+  await mkdir(outDir, { recursive: true })
+
+  const promises = [
+    writeCSSFile(outDir, plugins, sources),
+    writeEntryFile(outDir, plugins),
+    writeHTMLFile(outDir),
+  ]
+
+  await Promise.all(promises)
+}
+
+function resolvePackageDir(name: string) {
+  try {
+    return dirname(require.resolve(name))
+  } catch (_e) {
+    return undefined
+  }
+}
+
+function toCSSPath(outDir: string, target: string) {
+  return relative(outDir, target).split(sep).join("/")
+}
+
+async function writeCSSFile(
+  outDir: string,
+  plugins: string[] = [],
+  sources: string[] = []
+) {
+  const sourceDirs = [
+    outDir,
+    resolvePackageDir("@medusajs/dashboard"),
+    resolvePackageDir("@medusajs/ui"),
+    ...sources,
+    ...plugins.map(resolvePackageDir),
+  ].filter((dir): dir is string => !!dir)
+
+  const imports = [
+    require.resolve("tailwindcss/index.css"),
+    require.resolve("@medusajs/ui-preset/theme.css"),
+    require.resolve("@medusajs/dashboard/css"),
+  ]
+
+  const css = outdent`
+    ${imports.map((file) => `@import "${toCSSPath(outDir, file)}";`).join("\n")}
+
+    ${sourceDirs
+      .map((dir) => `@source "${toCSSPath(outDir, dir) || "."}";`)
+      .join("\n")}
+  `
+
+  await writeFile(join(outDir, "index.css"), css)
+}
+
+function getPluginName(index: number) {
+  return `plugin${index}`
+}
+
+async function writeEntryFile(outDir: string, plugins?: string[]) {
+  const entry = outdent`
+    import App from "@medusajs/dashboard";
+    import React from "react";
+    import ReactDOM from "react-dom/client";
+    import "./index.css";
+
+    ${plugins
+      ?.map((plugin, idx) => `import ${getPluginName(idx)} from "${plugin}"`)
+      .join("\n")}
+
+    let root = null
+
+    if (!root) {
+      root = ReactDOM.createRoot(document.getElementById("medusa"))
+    }
+
+    
+    root.render(
+      <React.StrictMode>
+        <App plugins={[${plugins
+          ?.map((_, idx) => getPluginName(idx))
+          .join(", ")}]} />
+      </React.StrictMode>
+    )
+
+
+    if (import.meta.hot) {
+        import.meta.hot.accept()
+    }
+  `
+
+  await writeFile(join(outDir, "entry.jsx"), entry)
+}
+
+async function writeHTMLFile(outDir: string) {
+  const html = outdent`
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta
+                http-equiv="Content-Type"
+                content="text/html; charset=UTF-8"
+            />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+            />
+            <link rel="icon" href="data:," data-placeholder-favicon />
+        </head>
+
+        <body>
+            <div id="medusa"></div>
+            <script type="module" src="./entry.jsx"></script>
+        </body>
+    </html>
+  `
+
+  await writeFile(join(outDir, "index.html"), html)
+}

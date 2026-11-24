@@ -1,0 +1,160 @@
+import { getAllFieldsAndRelations } from "../module-data-fetcher"
+
+describe("ModuleDataFetcher", () => {
+  describe("getAllFieldsAndRelations", () => {
+    it("should properly handle fields and relations transformation", () => {
+      let expand = {
+        fields: ["name", "age"],
+        expands: {
+          friend: {
+            fields: ["name"],
+            expands: {
+              ball: {
+                fields: ["*"],
+              },
+            },
+          },
+        },
+      }
+
+      let result = getAllFieldsAndRelations(expand)
+
+      expect(result).toEqual({
+        select: ["name", "age", "friend.name"],
+        relations: ["friend", "friend.ball"],
+        args: {
+          "": undefined,
+          friend: undefined,
+          "friend.ball": undefined,
+        },
+      })
+
+      expand = {
+        fields: [],
+        expands: {
+          friend: {
+            fields: ["name"],
+            expands: {
+              ball: {
+                fields: ["*"],
+              },
+            },
+          },
+        },
+      }
+
+      result = getAllFieldsAndRelations(expand)
+
+      expect(result).toEqual({
+        select: ["friend.name"],
+        relations: ["friend", "friend.ball"],
+        args: {
+          "": undefined,
+          friend: undefined,
+          "friend.ball": undefined,
+        },
+      })
+
+      expand = {
+        fields: [],
+        expands: {
+          friend: {
+            fields: ["*"],
+            expands: {
+              ball: {
+                fields: ["*"],
+              },
+            },
+          },
+        },
+      }
+
+      result = getAllFieldsAndRelations(expand)
+
+      expect(result).toEqual({
+        select: [],
+        relations: ["friend", "friend.ball"],
+        args: {
+          "": undefined,
+          friend: undefined,
+          "friend.ball": undefined,
+        },
+      })
+
+      expand = {
+        fields: [],
+        expands: {
+          friend: {
+            fields: [],
+            expands: {
+              ball: {
+                fields: ["*"],
+              },
+            },
+          },
+        },
+      }
+
+      result = getAllFieldsAndRelations(expand)
+
+      expect(result).toEqual({
+        select: [],
+        relations: ["friend", "friend.ball"],
+        args: {
+          "": undefined,
+          friend: undefined,
+          "friend.ball": undefined,
+        },
+      })
+    })
+
+    it("should not crash when the object prototype is polluted", () => {
+      ;(Object.prototype as any).polluted = { fields: ["x"] }
+
+      try {
+        const expand = {
+          fields: ["name"],
+          expands: {
+            friend: {
+              fields: ["name"],
+            },
+          },
+        }
+
+        expect(() => getAllFieldsAndRelations(expand)).not.toThrow()
+      } finally {
+        delete (Object.prototype as any).polluted
+      }
+    })
+
+    it("should clone the expand only once regardless of nesting depth", () => {
+      const parseSpy = jest.spyOn(JSON, "parse")
+
+      try {
+        const filters = { id: "ball_1" }
+        const expand = {
+          fields: ["name"],
+          expands: {
+            friend: {
+              fields: ["name"],
+              expands: {
+                ball: {
+                  fields: ["id"],
+                  args: [{ name: "filters", value: filters }],
+                },
+              },
+            },
+          },
+        }
+
+        const result = getAllFieldsAndRelations(expand as any)
+
+        expect(parseSpy).toHaveBeenCalledTimes(1)
+        expect(result.args["friend.ball"]).toEqual(filters)
+        expect(result.args["friend.ball"]).not.toBe(filters)
+      } finally {
+        parseSpy.mockRestore()
+      }
+    })
+  })
+})

@@ -1,0 +1,1856 @@
+{
+	"schemaVersion": "2.0",
+	"id": 21192,
+	"name": "rbac-models",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"comment": {
+		"summary": [
+			{
+				"text": "## Relations Overview\n\n",
+				"kind": "text"
+			},
+			{
+				"text": "```mermaid\nerDiagram\n\tRbacRole ||--|| RbacRolePolicy : policies\n\tRbacRole ||--|| RbacRoleAssignment : assignments\n\n```",
+				"kind": "code"
+			}
+		]
+	},
+	"children": [
+		{
+			"id": 21193,
+			"name": "RbacPolicy",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "rbac-policy.ts",
+					"line": 3,
+					"character": 6,
+					"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L3"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "@medusajs/utils",
+					"packagePath": "src/dml/entity.ts",
+					"qualifiedName": "DmlEntity"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": {
+							"packageName": "@medusajs/utils",
+							"packagePath": "src/dml/entity.ts",
+							"qualifiedName": "DMLEntitySchemaBuilder"
+						},
+						"typeArguments": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 21194,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 21195,
+											"name": "id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The ID of the rbac policy."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 5,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L5"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/primary-key.ts",
+													"qualifiedName": "PrimaryKeyModifier"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@medusajs/utils",
+															"packagePath": "src/dml/properties/id.ts",
+															"qualifiedName": "IdProperty"
+														},
+														"name": "IdProperty",
+														"package": "@medusajs/utils"
+													}
+												],
+												"name": "PrimaryKeyModifier",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21196,
+											"name": "key",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The key of the rbac policy"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 6,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L6"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21197,
+											"name": "resource",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The resource of the rbac policy"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 7,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L7"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21198,
+											"name": "operation",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The operation of the rbac policy"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 8,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L8"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21199,
+											"name": "name",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The name of the rbac policy"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 9,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L9"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21200,
+											"name": "description",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The description of the rbac policy"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 10,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L10"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21201,
+											"name": "metadata",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Holds custom data in key-value pairs."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-policy.ts",
+													"line": 11,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-policy.ts#L11"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/json.ts",
+													"qualifiedName": "JSONProperty"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "NoInfer"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": {
+																	"packageName": "typescript",
+																	"packagePath": "lib/lib.es5.d.ts",
+																	"qualifiedName": "Record"
+																},
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "unknown"
+																	}
+																],
+																"name": "Record",
+																"package": "typescript"
+															}
+														],
+														"name": "NoInfer",
+														"package": "typescript"
+													}
+												],
+												"name": "JSONProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												21195,
+												21196,
+												21197,
+												21198,
+												21199,
+												21200,
+												21201
+											]
+										}
+									]
+								}
+							}
+						],
+						"name": "DMLEntitySchemaBuilder",
+						"package": "@medusajs/utils"
+					},
+					{
+						"type": "literal",
+						"value": "rbac_policy"
+					}
+				],
+				"name": "DmlEntity",
+				"package": "@medusajs/utils"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 21233,
+			"name": "RbacRoleAssignment",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "rbac-role-assignment.ts",
+					"line": 4,
+					"character": 6,
+					"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L4"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "@medusajs/utils",
+					"packagePath": "src/dml/entity.ts",
+					"qualifiedName": "DmlEntity"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": {
+							"packageName": "@medusajs/utils",
+							"packagePath": "src/dml/entity.ts",
+							"qualifiedName": "DMLEntitySchemaBuilder"
+						},
+						"typeArguments": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 21234,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 21235,
+											"name": "id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The ID of the rbac role assignment."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 6,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L6"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/primary-key.ts",
+													"qualifiedName": "PrimaryKeyModifier"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@medusajs/utils",
+															"packagePath": "src/dml/properties/id.ts",
+															"qualifiedName": "IdProperty"
+														},
+														"name": "IdProperty",
+														"package": "@medusajs/utils"
+													}
+												],
+												"name": "PrimaryKeyModifier",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21236,
+											"name": "role",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The associated role."
+													}
+												],
+												"modifierTags": [
+													"@expandable"
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 7,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L7"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/relations/belongs-to.ts",
+													"qualifiedName": "BelongsTo"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 21202,
+														"name": "RbacRole"
+													}
+												],
+												"name": "BelongsTo",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21250,
+											"name": "reference",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The reference of the rbac role assignment"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 8,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L8"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21251,
+											"name": "reference_id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The reference id of the rbac role assignment"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 9,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L9"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21252,
+											"name": "scope",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The scope of the rbac role assignment"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 10,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L10"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21253,
+											"name": "scope_id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The scope id of the rbac role assignment"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 11,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L11"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21254,
+											"name": "metadata",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Holds custom data in key-value pairs."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-assignment.ts",
+													"line": 12,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-assignment.ts#L12"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/json.ts",
+													"qualifiedName": "JSONProperty"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "NoInfer"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": {
+																	"packageName": "typescript",
+																	"packagePath": "lib/lib.es5.d.ts",
+																	"qualifiedName": "Record"
+																},
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "unknown"
+																	}
+																],
+																"name": "Record",
+																"package": "typescript"
+															}
+														],
+														"name": "NoInfer",
+														"package": "typescript"
+													}
+												],
+												"name": "JSONProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												21235,
+												21236,
+												21250,
+												21251,
+												21252,
+												21253,
+												21254
+											]
+										}
+									]
+								}
+							}
+						],
+						"name": "DMLEntitySchemaBuilder",
+						"package": "@medusajs/utils"
+					},
+					{
+						"type": "literal",
+						"value": "rbac_role_assignment"
+					}
+				],
+				"name": "DmlEntity",
+				"package": "@medusajs/utils"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 21255,
+			"name": "RbacRolePolicy",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "rbac-role-policy.ts",
+					"line": 5,
+					"character": 6,
+					"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-policy.ts#L5"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "@medusajs/utils",
+					"packagePath": "src/dml/entity.ts",
+					"qualifiedName": "DmlEntity"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": {
+							"packageName": "@medusajs/utils",
+							"packagePath": "src/dml/entity.ts",
+							"qualifiedName": "DMLEntitySchemaBuilder"
+						},
+						"typeArguments": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 21256,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 21257,
+											"name": "id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The ID of the rbac role policy."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-policy.ts",
+													"line": 7,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-policy.ts#L7"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/primary-key.ts",
+													"qualifiedName": "PrimaryKeyModifier"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@medusajs/utils",
+															"packagePath": "src/dml/properties/id.ts",
+															"qualifiedName": "IdProperty"
+														},
+														"name": "IdProperty",
+														"package": "@medusajs/utils"
+													}
+												],
+												"name": "PrimaryKeyModifier",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21258,
+											"name": "role",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The associated role."
+													}
+												],
+												"modifierTags": [
+													"@expandable"
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-policy.ts",
+													"line": 8,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-policy.ts#L8"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/relations/belongs-to.ts",
+													"qualifiedName": "BelongsTo"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 21202,
+														"name": "RbacRole"
+													}
+												],
+												"name": "BelongsTo",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21272,
+											"name": "policy",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The associated policy."
+													}
+												],
+												"modifierTags": [
+													"@expandable"
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-policy.ts",
+													"line": 9,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-policy.ts#L9"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/relations/belongs-to.ts",
+													"qualifiedName": "BelongsTo"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 21193,
+														"name": "RbacPolicy"
+													}
+												],
+												"name": "BelongsTo",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21283,
+											"name": "metadata",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Holds custom data in key-value pairs."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role-policy.ts",
+													"line": 10,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role-policy.ts#L10"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/json.ts",
+													"qualifiedName": "JSONProperty"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "NoInfer"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": {
+																	"packageName": "typescript",
+																	"packagePath": "lib/lib.es5.d.ts",
+																	"qualifiedName": "Record"
+																},
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "unknown"
+																	}
+																],
+																"name": "Record",
+																"package": "typescript"
+															}
+														],
+														"name": "NoInfer",
+														"package": "typescript"
+													}
+												],
+												"name": "JSONProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												21257,
+												21258,
+												21272,
+												21283
+											]
+										}
+									]
+								}
+							}
+						],
+						"name": "DMLEntitySchemaBuilder",
+						"package": "@medusajs/utils"
+					},
+					{
+						"type": "literal",
+						"value": "rbac_role_policy"
+					}
+				],
+				"name": "DmlEntity",
+				"package": "@medusajs/utils"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 21202,
+			"name": "RbacRole",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "rbac-role.ts",
+					"line": 5,
+					"character": 6,
+					"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L5"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "@medusajs/utils",
+					"packagePath": "src/dml/entity.ts",
+					"qualifiedName": "DmlEntity"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": {
+							"packageName": "@medusajs/utils",
+							"packagePath": "src/dml/entity.ts",
+							"qualifiedName": "DMLEntitySchemaBuilder"
+						},
+						"typeArguments": [
+							{
+								"type": "reflection",
+								"declaration": {
+									"id": 21203,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 21204,
+											"name": "id",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The ID of the rbac role."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 7,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L7"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/primary-key.ts",
+													"qualifiedName": "PrimaryKeyModifier"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "@medusajs/utils",
+															"packagePath": "src/dml/properties/id.ts",
+															"qualifiedName": "IdProperty"
+														},
+														"name": "IdProperty",
+														"package": "@medusajs/utils"
+													}
+												],
+												"name": "PrimaryKeyModifier",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21205,
+											"name": "name",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The name of the rbac role"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 8,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L8"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21206,
+											"name": "description",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The description of the rbac role"
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 9,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L9"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/text.ts",
+													"qualifiedName": "TextProperty"
+												},
+												"name": "TextProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21207,
+											"name": "metadata",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {
+												"isOptional": true
+											},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "Holds custom data in key-value pairs."
+													}
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 10,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L10"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/properties/json.ts",
+													"qualifiedName": "JSONProperty"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": {
+															"packageName": "typescript",
+															"packagePath": "lib/lib.es5.d.ts",
+															"qualifiedName": "NoInfer"
+														},
+														"typeArguments": [
+															{
+																"type": "reference",
+																"target": {
+																	"packageName": "typescript",
+																	"packagePath": "lib/lib.es5.d.ts",
+																	"qualifiedName": "Record"
+																},
+																"typeArguments": [
+																	{
+																		"type": "intrinsic",
+																		"name": "string"
+																	},
+																	{
+																		"type": "intrinsic",
+																		"name": "unknown"
+																	}
+																],
+																"name": "Record",
+																"package": "typescript"
+															}
+														],
+														"name": "NoInfer",
+														"package": "typescript"
+													}
+												],
+												"name": "JSONProperty",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21208,
+											"name": "policies",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The associated policies."
+													}
+												],
+												"modifierTags": [
+													"@expandable"
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 11,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L11"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/relations/has-many.ts",
+													"qualifiedName": "HasMany"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 21255,
+														"name": "RbacRolePolicy"
+													}
+												],
+												"name": "HasMany",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										},
+										{
+											"id": 21220,
+											"name": "assignments",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"comment": {
+												"summary": [
+													{
+														"kind": "text",
+														"text": "The associated assignments."
+													}
+												],
+												"modifierTags": [
+													"@expandable"
+												]
+											},
+											"sources": [
+												{
+													"fileName": "rbac-role.ts",
+													"line": 14,
+													"character": 4,
+													"url": "https://github.com/medusajs/medusa/blob/6369161c5ee22c1ffc92859838d6e72b54de3fc4/packages/modules/rbac/src/models/rbac-role.ts#L14"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"packageName": "@medusajs/utils",
+													"packagePath": "src/dml/relations/has-many.ts",
+													"qualifiedName": "HasMany"
+												},
+												"typeArguments": [
+													{
+														"type": "reference",
+														"target": 21233,
+														"name": "RbacRoleAssignment"
+													}
+												],
+												"name": "HasMany",
+												"package": "@medusajs/utils"
+											},
+											"defaultValue": "..."
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												21204,
+												21205,
+												21206,
+												21207,
+												21208,
+												21220
+											]
+										}
+									]
+								}
+							}
+						],
+						"name": "DMLEntitySchemaBuilder",
+						"package": "@medusajs/utils"
+					},
+					{
+						"type": "literal",
+						"value": "rbac_role"
+					}
+				],
+				"name": "DmlEntity",
+				"package": "@medusajs/utils"
+			},
+			"defaultValue": "..."
+		}
+	],
+	"groups": [
+		{
+			"title": "Variables",
+			"children": [
+				21193,
+				21233,
+				21255,
+				21202
+			]
+		}
+	],
+	"packageName": "@medusajs/rbac",
+	"symbolIdMap": {
+		"21192": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/index.ts",
+			"qualifiedName": ""
+		},
+		"21193": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "RbacPolicy"
+		},
+		"21194": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object"
+		},
+		"21195": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21196": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.key"
+		},
+		"21197": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.resource"
+		},
+		"21198": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.operation"
+		},
+		"21199": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.name"
+		},
+		"21200": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.description"
+		},
+		"21201": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21202": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "RbacRole"
+		},
+		"21203": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object"
+		},
+		"21204": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21205": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.name"
+		},
+		"21206": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.description"
+		},
+		"21207": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21208": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.policies"
+		},
+		"21209": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21210": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21211": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object"
+		},
+		"21212": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21213": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.role"
+		},
+		"21214": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21215": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21216": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.policy"
+		},
+		"21217": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21218": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21219": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21220": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.assignments"
+		},
+		"21221": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21222": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21223": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object"
+		},
+		"21224": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21225": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.role"
+		},
+		"21226": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__function"
+		},
+		"21227": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__function"
+		},
+		"21228": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.reference"
+		},
+		"21229": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.reference_id"
+		},
+		"21230": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.scope"
+		},
+		"21231": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.scope_id"
+		},
+		"21232": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21233": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "RbacRoleAssignment"
+		},
+		"21234": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object"
+		},
+		"21235": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21236": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.role"
+		},
+		"21237": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__function"
+		},
+		"21238": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__function"
+		},
+		"21239": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object"
+		},
+		"21240": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21241": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.name"
+		},
+		"21242": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.description"
+		},
+		"21243": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21244": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.policies"
+		},
+		"21245": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21246": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21247": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.assignments"
+		},
+		"21248": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21249": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21250": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.reference"
+		},
+		"21251": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.reference_id"
+		},
+		"21252": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.scope"
+		},
+		"21253": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.scope_id"
+		},
+		"21254": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-assignment.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21255": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "RbacRolePolicy"
+		},
+		"21256": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object"
+		},
+		"21257": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21258": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.role"
+		},
+		"21259": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21260": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21261": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object"
+		},
+		"21262": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21263": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.name"
+		},
+		"21264": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.description"
+		},
+		"21265": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21266": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.policies"
+		},
+		"21267": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21268": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21269": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__object.assignments"
+		},
+		"21270": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21271": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role.ts",
+			"qualifiedName": "__function"
+		},
+		"21272": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.policy"
+		},
+		"21273": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21274": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__function"
+		},
+		"21275": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object"
+		},
+		"21276": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.id"
+		},
+		"21277": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.key"
+		},
+		"21278": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.resource"
+		},
+		"21279": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.operation"
+		},
+		"21280": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.name"
+		},
+		"21281": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.description"
+		},
+		"21282": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-policy.ts",
+			"qualifiedName": "__object.metadata"
+		},
+		"21283": {
+			"packageName": "@medusajs/rbac",
+			"packagePath": "src/models/rbac-role-policy.ts",
+			"qualifiedName": "__object.metadata"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "../../../../packages/modules/rbac/src/models/index.ts"
+		},
+		"reflections": {
+			"1": 21192
+		}
+	}
+}
